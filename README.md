@@ -4,6 +4,7 @@
 
 ---
 
-- React
+- ReactJS
+- ChartJS
 - MUI
 - Third-party API
