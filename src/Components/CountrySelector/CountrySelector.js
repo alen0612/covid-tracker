@@ -4,11 +4,14 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 import Axios from "axios";
 
 function CountrySelector(props) {
   const [countries, setCountries] = useState(["Global"]);
   const [currentCountry, setCurrentCountry] = useState("Global");
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     Axios.get("https://covid19.mathdro.id/api/countries")
@@ -29,9 +32,27 @@ function CountrySelector(props) {
     //console.log(event.target.value);
   };
 
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const handleToggle = () => {
+    setOpen(!open);
+    setTimeout(() => {
+      setOpen(false);
+    }, 750);
+  };
+
   /*value={country}*/
   return (
     <div className="CountrySelector">
+      <Backdrop
+        sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+        open={open}
+        onClick={handleClose}
+        transitionDuration={150}
+      >
+        <CircularProgress color="inherit" />
+      </Backdrop>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label">Country</InputLabel>
         <Select
@@ -40,6 +61,7 @@ function CountrySelector(props) {
           value={currentCountry}
           label="Country"
           onChange={handleChange}
+          onClose={handleToggle}
         >
           {countries.map((c, i) => (
             <MenuItem key={i} value={c}>
