@@ -1,0 +1,11 @@
+.CountrySelector {
+  width: 50%;
+  margin: auto;
+  margin-top: 5%;
+}
+
+@media screen and (max-width: 768px) {
+  .CountrySelector {
+    width: 80%;
+  }
+}

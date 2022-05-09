@@ -1,0 +1,20 @@
+.Bar {
+  margin-top: 50px !important;
+  width: 90% !important;
+  height: 90% !important;
+  margin: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .Bar {
+    height: 27.5em !important;
+    margin-right: 55px;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .Bar {
+    height: 12.5em !important;
+    margin-right: 35px;
+  }
+}
