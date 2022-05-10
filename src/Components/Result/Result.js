@@ -29,36 +29,9 @@ function Result(props) {
     },
   };
 
-  const LineData = {
-    // labels: dailyData.map(({ date }) => new Date(date).toLocaleDateString()),
-    // datasets: [
-    //   {
-    //     data: dailyData.map((data) => data.confirmed),
-    //     label: "Infected",
-    //     borderColor: "#3333ff",
-    //     fill: true,
-    //   },
-    //   {
-    //     data: dailyData.map((data) => data.deaths),
-    //     label: "Deaths",
-    //     borderColor: "red",
-    //     backgroundColor: "rgba(255, 0, 0, 0.5)",
-    //     fill: true,
-    //   },
-    //   {
-    //     data: dailyData.map((data) => data.recovered),
-    //     label: "Recovered",
-    //     borderColor: "green",
-    //     backgroundColor: "rgba(0, 255, 0, 0.5)",
-    //     fill: true,
-    //   },
-    // ],
-  };
-
   return (
     <div className="Result">
-      <Bar options={BarOptions} data={BarData} className="Bar" />;
-      {/* <Line data={LineData} className="Line" /> */}
+      <Bar options={BarOptions} data={BarData} className="Bar" />
     </div>
   );
 }
