@@ -3,3 +3,53 @@
   height: 100vh;
   width: 100vw;
 }
+
+.Covid-tracker {
+  text-align: center;
+  width: inherit;
+  font-size: 5em;
+  margin-top: 50px;
+  color: black;
+}
+
+.Last-update {
+  font-size: 1em;
+  text-align: center;
+  width: inherit;
+  margin-top: 25px;
+  color: rgba(52, 52, 52, 0.842);
+}
+
+@media screen and (max-width: 1024px) and (min-width: 768px) {
+  .Covid-tracker {
+    font-size: 4em;
+  }
+
+  .Last-update {
+    font-size: 1em;
+    text-align: center;
+    width: inherit;
+    margin-top: 25px;
+    color: rgba(52, 52, 52, 0.842);
+  }
+}
+
+@media screen and (max-width: 768px) and (min-width: 425px) {
+  .Covid-tracker {
+    font-size: 3em;
+  }
+
+  .Last-update {
+    font-size: 0.8em;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .Covid-tracker {
+    font-size: 2em;
+  }
+
+  .Last-update {
+    font-size: 0.6em;
+  }
+}

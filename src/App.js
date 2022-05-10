@@ -10,6 +10,7 @@ function App() {
   const [infected, setInfected] = useState(0);
   const [recovered, setRecovered] = useState(0);
   const [deaths, setDeaths] = useState(0);
+  const [lastUpdate, setLastUpdate] = useState("");
 
   useEffect(() => {
     if (currentCountry === "Global") {
@@ -35,10 +36,36 @@ function App() {
           console.log(err);
         });
     }
+
+    Axios.get("https://covid19.mathdro.id/api")
+      .then((res) => {
+        //console.log(res.data.lastUpdate);
+        let date = res.data.lastUpdate.slice(0, 10);
+        let time = res.data.lastUpdate.slice(11, 19);
+        setLastUpdate(date + " " + time);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }, [currentCountry]);
+
+  let tmp = false;
+
+  if (!tmp) {
+    tmp = true;
+    Axios.get("https://api.covidtracking.com/v1/us/daily.json")
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 
   return (
     <div className="App">
+      <div className="Covid-tracker">Covid Tracker</div>
+      <div className="Last-update">Last update : {lastUpdate}</div>
       <Card infected={infected} recovered={recovered} deaths={deaths} />
       <CountrySelector setCurrentCountry={setCurrentCountry} />
       <Result

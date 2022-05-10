@@ -1,10 +1,10 @@
 import "./Result.css";
 import React from "react";
 import Chart from "chart.js/auto";
-import { Bar } from "react-chartjs-2";
+import { Bar, Line } from "react-chartjs-2";
 
 function Result(props) {
-  const data = {
+  const BarData = {
     labels: ["Infected", "Recovered", "Deaths"],
     datasets: [
       {
@@ -19,7 +19,7 @@ function Result(props) {
     ],
   };
 
-  const options = {
+  const BarOptions = {
     plugins: {
       legend: { display: false },
       title: {
@@ -29,9 +29,36 @@ function Result(props) {
     },
   };
 
+  const LineData = {
+    // labels: dailyData.map(({ date }) => new Date(date).toLocaleDateString()),
+    // datasets: [
+    //   {
+    //     data: dailyData.map((data) => data.confirmed),
+    //     label: "Infected",
+    //     borderColor: "#3333ff",
+    //     fill: true,
+    //   },
+    //   {
+    //     data: dailyData.map((data) => data.deaths),
+    //     label: "Deaths",
+    //     borderColor: "red",
+    //     backgroundColor: "rgba(255, 0, 0, 0.5)",
+    //     fill: true,
+    //   },
+    //   {
+    //     data: dailyData.map((data) => data.recovered),
+    //     label: "Recovered",
+    //     borderColor: "green",
+    //     backgroundColor: "rgba(0, 255, 0, 0.5)",
+    //     fill: true,
+    //   },
+    // ],
+  };
+
   return (
     <div className="Result">
-      <Bar options={options} data={data} className="Bar" />;
+      <Bar options={BarOptions} data={BarData} className="Bar" />;
+      {/* <Line data={LineData} className="Line" /> */}
     </div>
   );
 }

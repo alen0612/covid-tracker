@@ -1,13 +1,14 @@
 .Bar {
   margin-top: 50px !important;
-  width: 90% !important;
-  height: 90% !important;
+  width: 70% !important;
+  height: 50% !important;
   margin: auto;
 }
 
 @media screen and (max-width: 768px) {
   .Bar {
     height: 27.5em !important;
+    width: 90% !important;
     margin-right: 55px;
   }
 }
