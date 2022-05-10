@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/covid-tracker/static/css/main.294f7e5f.css",
-    "main.js": "/covid-tracker/static/js/main.66923c5d.js",
+    "main.js": "/covid-tracker/static/js/main.0dad6755.js",
     "index.html": "/covid-tracker/index.html",
     "main.294f7e5f.css.map": "/covid-tracker/static/css/main.294f7e5f.css.map",
-    "main.66923c5d.js.map": "/covid-tracker/static/js/main.66923c5d.js.map"
+    "main.0dad6755.js.map": "/covid-tracker/static/js/main.0dad6755.js.map"
   },
   "entrypoints": [
     "static/css/main.294f7e5f.css",
-    "static/js/main.66923c5d.js"
+    "static/js/main.0dad6755.js"
   ]
 }
